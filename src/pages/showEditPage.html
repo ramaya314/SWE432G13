@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="../styles/palette.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/navbar.css" />
+        <link rel="stylesheet" href="../styles/footer.css" />
+        <link rel="stylesheet" href="../styles/editshow.css" />
+    </head>
+    <body class="encore-dark-theme">
+        <div class="page">
+            <!--component: navbar-->
+            <div class="navbar">
+                <img src="../images/logo-placeholder-image.png" class="navBarLogo" />
+                <div class="navBarControls">
+                    <div class="navBarControls_option">Listen</div>
+                    <div class="navBarControls_option active">Produce</div>
+                    <div class="navBarControls_option">DJ</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="pageHeader">
+                    <div class="backButton iconButton" onclick="location.href='./producePage.html';">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                    </div>
+                    <div class="contentTitle">
+                        Add/Edit Show
+                    </div>
+                </div>
+                <div class="controlsContainer">
+                    <div class="inputRow">
+                        <div class="inputLabel">Name:</div>
+                        <div class="inputControl"><input type="text" style="width: 375px;" /></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Date:</div>
+                        <div class="inputControl"><input type="text" style="width: 375px;"  /></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Time:</div>
+                        <div class="inputControl"><input type="text" /> to <input type="text"></div>
+                    </div>
+                    
+                    <div class="inputRow" style="margin-bottom:20px;">
+                        <div class="inputLabel">DJ:</div>
+                        <div class="inputControl">
+                            <select style="width:375px;height:25px;">
+                                <option>DJ Tom</option>
+                                <option>DJ Travis</option>
+                                <option>DJ Mark</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="actionButton" style="margin-left: 200px;">
+                        Save
+                    </button>
+
+                </div>
+            </div>
+            <div class="footer">
+                this is the footer
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+.navbar {
+    background-color: var(--background-base);
+    color: var(--text-base);
+    display:flex;
+    justify-content: space-between;
+}
+.navBarLogo {
+    width:60px;
+    height:60px;
+}
+.navBarControls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navBarControls_option {
+    margin:10px;
+    padding:7px;
+    min-width:100px;
+    border: 1px solid;
+    text-align: center;
+    border-color:var(--essential-subdued);
+    color:var(--text-subdued);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.navBarControls_option:hover {
+    border-color:var(--essential-base);
+    color:var(--text-base);
+}
+
+.navBarControls_option.active {
+    border-color:var(--essential-bright-accent);
+    color:var(--text-base);
+}
