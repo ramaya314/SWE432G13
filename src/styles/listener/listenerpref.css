@@ -1,0 +1,43 @@
+.pref-content {
+    background-color: var(--essential-subdued);
+    margin: 1rem;
+    display: flex;
+    width: 95%;
+    border-radius: 5px;
+    flex-direction: column;
+    box-shadow: 2px 0px 10px 2px black;
+}
+
+.pref-text {
+    font-size: 2rem;
+    margin: 4rem 0rem 0rem 3rem;
+}
+
+.pref-bar {
+    display: flex;
+    margin: 2rem 0rem 0rem 3rem;
+}
+
+.pref-container {
+    display: flex;
+    margin: 3.5rem 1rem 1rem 3rem;
+    flex-wrap: wrap;
+}
+
+.pref-div {
+    height: 1.75rem;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-elevated-base);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 1px 1px black;
+    margin: 0rem 0.5rem 1rem 0rem;
+    cursor: pointer;
+}
+
+.pref-div:hover {
+    background-color: var(--background-tinted-highlight);
+}
+

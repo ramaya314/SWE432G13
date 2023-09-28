@@ -1,0 +1,58 @@
+.follow-content {
+    background-color: var(--essential-subdued);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border-radius: 5px;
+    flex-direction: column;
+    box-shadow: 2px 0px 10px 2px black;
+}
+
+.follow-text {
+    font-size: 4rem;
+    padding-top: 2rem;
+}
+
+.follower-wrapper {
+    width: 95%;
+}
+
+.follower-info {
+    display: flex;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.follower-info:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.25rem;
+    border-color: var(--text-bright-accent);
+}
+
+.follower-info img {
+    width: 7rem;
+}
+
+.follower-info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dj-info-name {
+    margin: 1rem 0rem 0.5rem 1rem;
+    font-size: 1.8rem;
+}
+
+.dj-info-desc {
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+
+hr {
+    border: 0.1rem solid black;
+    border-radius: 5px;
+    width:95%;
+}
