@@ -1,0 +1,107 @@
+.listen-content {
+    background: var(--decorative-subdued);
+    border-radius: 5px;
+    display: flex;
+    margin-top: 1rem;
+}
+
+/* Don't need two scroll bars here */
+.content {
+    overflow-y: hidden;
+}
+
+.sidebar {
+    padding: 1rem;
+    border-style: solid;
+    border-width: 0rem 0.2rem 0rem 0rem;
+    border-radius: 5px 0px 0px 5px;
+    border-color: var(--background-base);
+}
+
+/* Top right bottom left */
+/* TopBottom RightLeft */
+.sidebar-buttons {
+    padding: 1rem 0.8rem;
+}
+
+.side-button {
+    padding: 1.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-button.active {
+    border-style: solid;
+    border-radius: 1rem;
+    border-color:var(--essential-bright-accent);
+    color:var(--text-base);
+}
+
+.md-34 {
+    font-size: 3rem !important;
+}
+
+.side-button a {
+    font-size: 1.8rem;
+    padding-left: 0.85rem;
+    text-decoration: none;
+    color: var(--text-base);
+}
+
+.side-button a:hover {
+    color: var(--text-positive);
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.music-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:99%;
+    background-color: var(--background-offwhite);
+    padding: 0.25rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.music-bar-info {
+    align-items: center;
+    display: flex;
+    color: var(--background-press);
+}
+
+.music-bar-info img {
+    width: 4.5rem;
+    padding-right: 1rem;
+}
+
+.music-info-ti {
+    padding: 0.3rem 0rem;
+}
+
+.music-bar-play {
+    color: var(--background-press);
+}
+
+.md-44 {
+    font-size: 4rem;
+}
+
+.md-44:hover {
+    color: var(--essential-bright-accent);
+}
+
+.md-34:hover {
+    color: var(--essential-bright-accent);
+}
+
+.music-bar-func {
+    color: var(--background-press);
+    padding-right: 1rem;
+}
