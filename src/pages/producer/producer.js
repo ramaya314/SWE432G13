@@ -81,7 +81,7 @@ function getShowListItemElement(show) {
     let textContentContainer = document.createElement('div');
     textContentContainer.classList.add('controlListView_option_textContent');
     let timeLabel = document.createElement('div');
-    timeLabel.innerText = `${show.from} - ${show.to}`;
+    timeLabel.innerText = `${show.date}\t${show.from} - ${show.to}`;
     timeLabel.classList.add('dateTimeLabel');
     let showNameLabel = document.createElement('div');
     showNameLabel.classList.add('showName');
