@@ -68,8 +68,7 @@ function validateRequiredInput(inputId, inputLabel) {
         input.classList.add('error');
         input.addEventListener('change', e => {
             let currentInput = e.currentTarget;
-            currentInput.classList.remove('error')
-            e.currentTarget.remo
+            currentInput.classList.remove('error');
         }, {once: true});
         return `the ${inputLabel} is required`;
     }
