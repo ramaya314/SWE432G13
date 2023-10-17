@@ -6,6 +6,17 @@
         <link rel="stylesheet" href="../../styles/navbar.css" />
         <link rel="stylesheet" href="../../styles/footer.css" />
         <link rel="stylesheet" href="../../styles/producer/produce.css" />
+        <link rel="stylesheet" href="../../components/autocomplete/autocomplete.css" />
+
+        
+        <script src="../../components/autocomplete/autocomplete.js"></script>
+        <script src="../../dal/data/songs.js"></script>
+        <script src="../../dal/data/shows.js"></script>
+        <script src="../../dal/repositories/dataRepository.js"></script>
+        <script src="../../dal/repositories/showRepository.js"></script>
+        <script src="../../dal/repositories/songRepository.js"></script>
+        <script src="./producer.js" ></script>
+
     </head>
     <body class="encore-dark-theme">
         <div class="page">
@@ -30,335 +41,49 @@
                     <div class="controlListViewContainer">
                         <div class="controlListViewHeader">
                             <div class="controlListViewHeaderTitle">Upcoming Shows</div>
-                            <div class="dateTimeSelector">12 May 2016</div>
-                            <div class="iconButton" onclick="location.href='./showEditPage.html';">
-                                <span class="material-symbols-outlined">
-                                    add_circle
-                                </span>
+
+                            <div class="filterContainer">
+                                <div>Filter:</div>
+                                <input type="radio" class="filterRadio" name="filterRadio" value="all" checked>All</input>
+                                <input type="radio" class="filterRadio" name="filterRadio" value="date">By Date</input>
+                                <input type="date" class="dateTimeSelector" id="dateInput" disabled/>
+                            </div>
+
+                            <div class="dateSelectorContainer">
+                                <div class="iconButton" id="addShowButton">
+                                    <span class="material-symbols-outlined">
+                                        add_circle
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
-                        <!--component: upcomingShowListViewItem-->
-                        <div class="controlListView">
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined"  onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined"  onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined"  onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined" onclick="location.href='./showEditPage.html';">
-                                            edit
-                                        </span>
-                                    </div>
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="controlListView" id="showListView">
                         </div>
                     </div>
 
                     
                     <!--component: upcomingShowListView-->
-                    <div class="controlListViewContainer">
+                    <div class="controlListViewContainer hidden" id="songListContainer">
                         <div class="controlListViewHeader">
-                            <div class="controlListViewHeaderTitle">Show Name</div>
-                            <div class="searchBar">search song...</div>
+                            <div class="controlListViewHeaderTitle" id="selectedShowNameLabel">Show Name</div>
+
+                            <div  class="searchBar">
+                                <div class="autocomplete searchBar" style="width:300px;">
+                                    <input id="songInput" type="text" placeholder="search song..." />
+                                </div>
+                                
+                                <div class="iconButton" id="addSongButton">
+                                    <span class="material-symbols-outlined">
+                                        add_circle
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                         <!--component: upcomingShowListViewItem-->
-                        <div class="controlListView">
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div>Sing Name</div>
-                                    <div>Artist</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="controlListView_option">
-                                <img src="../../images/profile.jpg" class="controlListView_option_profileImage" />
-                                <div class="controlListView_option_textContent">
-                                    <div class="dateTimeLabel">11:00pm - 12:00am</div>
-                                    <div class="showName">Show Name</div>
-                                    <div>DJ Name</div>
-                                </div>
-                                <div class="controlListView_option_actions">
-                                    <div class="iconButton">
-                                        <span class="material-symbols-outlined">
-                                            delete
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="controlListView" id="songListView">
                         </div>
-
 
 
                     </div>
@@ -366,7 +91,7 @@
                 </div>
             </div>
             <div class="footer">
-                this is the footer
+                GMU SWE432 G13
             </div>
         </div>
     </body>

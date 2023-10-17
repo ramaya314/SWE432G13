@@ -6,6 +6,13 @@
         <link rel="stylesheet" href="../../styles/navbar.css" />
         <link rel="stylesheet" href="../../styles/footer.css" />
         <link rel="stylesheet" href="../../styles/producer/editshow.css" />
+        
+        <script src="../../dal/data/songs.js"></script>
+        <script src="../../dal/data/shows.js"></script>
+        <script src="../../dal/repositories/dataRepository.js"></script>
+        <script src="../../dal/repositories/showRepository.js"></script>
+        <script src="../../dal/repositories/songRepository.js"></script>
+        <script src="./showEdit.js" ></script>
     </head>
     <body class="encore-dark-theme">
         <div class="page">
@@ -25,45 +32,46 @@
                             arrow_back
                         </span>
                     </div>
-                    <div class="contentTitle">
+                    <div class="contentTitle" id="pageTitleLabel">
                         Add/Edit Show
                     </div>
                 </div>
                 <div class="controlsContainer">
                     <div class="inputRow">
                         <div class="inputLabel">Name:</div>
-                        <div class="inputControl"><input type="text" style="width: 375px;" /></div>
+                        <div class="inputControl"><input type="text" style="width: 375px;" id="nameInput" /></div>
                     </div>
                     
                     <div class="inputRow">
                         <div class="inputLabel">Date:</div>
-                        <div class="inputControl"><input type="text" style="width: 375px;"  /></div>
+                        <div class="inputControl"><input style="width: 375px;"  type="date" id="dateInput"/></div>
                     </div>
                     
                     <div class="inputRow">
                         <div class="inputLabel">Time:</div>
-                        <div class="inputControl"><input type="text" /> to <input type="text"></div>
+                        <div class="inputControl"><input type="time" id="fromInput"/> to <input type="time" id="toInput"></div>
                     </div>
                     
                     <div class="inputRow" style="margin-bottom:20px;">
                         <div class="inputLabel">DJ:</div>
                         <div class="inputControl">
-                            <select style="width:375px;height:25px;">
-                                <option>DJ Tom</option>
-                                <option>DJ Travis</option>
-                                <option>DJ Mark</option>
+                            <select style="width:375px;height:25px;" id="djSelect">
+                                <option>Select DJ</option>
+                                <option value="1">DJ Tom</option>
+                                <option value="2">DJ Travis</option>
+                                <option value="3">DJ Mark</option>
                             </select>
                         </div>
                     </div>
 
-                    <button class="actionButton" style="margin-left: 200px;">
+                    <button class="actionButton" style="margin-left: 200px;" id="saveButton" onclick="onSaveClick();">
                         Save
                     </button>
 
                 </div>
             </div>
             <div class="footer">
-                this is the footer
+                GMU SWE432 G13
             </div>
         </div>
     </body>
