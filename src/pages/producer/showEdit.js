@@ -39,8 +39,6 @@ function onDOMContentLoaded() {
     else {
         pageTitleLabelElement.textContent = "Add Show";
     }
-    
-    addPageEventListeners();
 }
 
 function formIsValid() {
@@ -78,16 +76,15 @@ function validateRequiredInput(inputId, inputLabel) {
     return '';
 }
 
-function onSaveClick(e) {
-    e.stopPropagation();
-
+function onSaveClick() {
     var formErrors = formIsValid();
     if(formErrors) {
         alert(`Please fix the following errors on the form: ${formErrors}`);
         return;
     }
 
-    let showId = e.currentTarget.dataset.id;
+    let saveButton = document.getElementById("saveButton");
+    let showId = saveButton.dataset.id;
     let show = showRepository.get(showId) || {};
 
     show.name = document.getElementById("nameInput").value;
@@ -102,12 +99,6 @@ function onSaveClick(e) {
     
     location.href=`./producePage.html`;
 
-}
-
-
-function addPageEventListeners() {
-    let saveButton = document.getElementById("saveButton");
-    saveButton && saveButton.addEventListener("click", onSaveClick);
 }
 
 
