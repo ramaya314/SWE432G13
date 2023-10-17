@@ -19,6 +19,8 @@
     width:70px;
 }
 .inputControl input[type="text"], 
+.inputControl input[type="time"], 
+.inputControl input[type="date"], 
 .inputControl select {
     background-color: var(--background-base);
     border-color: var(--essential-subdued);
@@ -33,6 +35,10 @@
     border-color: var(--essential-subdued);
     color:var(--text-base);
     padding:10px 20px;
+}
+
+input.error {
+    border-color: var(--essential-negative) !important;
 }
 
 
