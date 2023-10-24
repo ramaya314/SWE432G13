@@ -1,3 +1,5 @@
+const DataRepository = require('./dataRepository');
+
 class SongRepository extends DataRepository{
     constructor(initialData) {
         super(initialData);
@@ -5,3 +7,5 @@ class SongRepository extends DataRepository{
         this.loadData();
     }
 }
+
+module.exports = SongRepository;

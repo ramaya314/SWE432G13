@@ -1,34 +1,21 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="stylesheet" href="../../styles/palette.css" />
-        <link rel="stylesheet" href="../../styles/main.css" />
-        <link rel="stylesheet" href="../../styles/navbar.css" />
-        <link rel="stylesheet" href="../../styles/footer.css" />
-        <link rel="stylesheet" href="../../styles/producer/produce.css" />
-        <link rel="stylesheet" href="../../components/autocomplete/autocomplete.css" />
+        <link rel="stylesheet" href="/css/palette.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/producer/producer.css" />
 
+        <script src="/js/apiCalls.js" ></script>
+        <script src="/js/producer/index.js" ></script>
         
-        <script src="../../components/autocomplete/autocomplete.js"></script>
-        <script src="../../dal/data/songs.js"></script>
-        <script src="../../dal/data/shows.js"></script>
-        <script src="../../dal/repositories/dataRepository.js"></script>
-        <script src="../../dal/repositories/showRepository.js"></script>
-        <script src="../../dal/repositories/songRepository.js"></script>
-        <script src="./producer.js" ></script>
-
+        <link rel="stylesheet" href="/autocomplete/autocomplete.css" />
+        <script src="/autocomplete/autocomplete.js"></script>
     </head>
     <body class="encore-dark-theme">
         <div class="page">
-            <!--component: navbar-->
-            <div class="navbar">
-                <img src="../../images/logo-placeholder-image.png" class="navBarLogo" />
-                <div class="navBarControls">
-                    <div class="navBarControls_option">Listen</div>
-                    <div class="navBarControls_option active">Produce</div>
-                    <div class="navBarControls_option">DJ</div>
-                </div>
-            </div>
+            
+            <%- include('../../partials/navbar.ejs'); %>
+
             <div class="content">
                 <div class="pageHeader">
                     <div class="contentTitle">
@@ -90,9 +77,7 @@
 
                 </div>
             </div>
-            <div class="footer">
-                GMU SWE432 G13
-            </div>
+            <%- include('../../partials/footer.ejs'); %>
         </div>
     </body>
 </html>

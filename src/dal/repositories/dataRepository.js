@@ -1,25 +1,35 @@
 
+const fs = require('fs');
+const path = require('node:path'); 
+
 function DataRepository(initialData) {
     this.initialData = initialData;
     return this;
 }
 
 DataRepository.prototype = {
+    dataFilePath: function() {
+        return path.join(__dirname, '..', '..', 'dal', 'data', `${this.moduleName}.json`);
+    },
     loadData: function () {
-        let sessionData = sessionStorage.getItem(this.moduleName);
-        this.data = JSON.parse(sessionData) || this.initialData;
+        if (fs.existsSync(this.dataFilePath())) {
+            this.data = JSON.parse(fs.readFileSync(this.dataFilePath()));
+        } else if(this.initialData) {
+            this.data = this.initialData;
+        } else {
+            this.data = {};
+        }
     },
     writeData: function() {
-        sessionStorage.setItem(this.moduleName, JSON.stringify(this.data));
+        fs.writeFileSync(this.dataFilePath(), JSON.stringify(this.data));
     },
     get: function (id) {
         return this.data[id];
     },
     getAll: function () {
-        return Object.entries(this.data).map(entry => entry[1]);
+        return this.data ? Object.entries(this.data).map(entry => entry[1]) : [];
     },
     addUpdate: function (object) {
-        console.log('saving object');
         if(!object) {
             console.error('no object was provided for addUpdate');
             return;
@@ -37,3 +47,5 @@ DataRepository.prototype = {
         this.writeData();
     }
 }
+
+module.exports = DataRepository;

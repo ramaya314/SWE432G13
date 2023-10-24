@@ -1,3 +1,6 @@
+const DataRepository = require('./dataRepository');
+var moment = require('moment'); 
+
 class ShowRepository extends DataRepository{
     constructor(initialData) {
         super(initialData);
@@ -14,8 +17,15 @@ class ShowRepository extends DataRepository{
 
     getShowsByDate(date) {
         let shows = this.getAll();
-
-        let filteredShows = shows.filter(show => new Date(show.date).getDate() == date.getDate())
+        console.log(date);
+        let dateObj = new Date(parseInt(date));
+        console.log(dateObj);
+        let dateString = moment.utc(dateObj).format('YYYY-MM-DD');
+        console.log(dateString);
+        let filteredShows = shows.filter(show => show.date == dateString)
         return filteredShows;
     }
 }
+
+
+module.exports = ShowRepository;
