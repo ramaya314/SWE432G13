@@ -1,11 +1,11 @@
 
-const showRepository = new ShowRepository(shows);  
-const songRepository = new SongRepository(songs);  
-
 var selectedShowId = null;
 
-function renderShows(date) {
-    let shows = date ? showRepository.getShowsByDate(date) : showRepository.getAll();  
+async function renderShows(date) {
+    let uri = '/api/shows';
+    if(date) uri += `?date=${date.getTime()}`;
+    const showsResponse = await fetch(uri);
+    const shows = await showsResponse.json();
     let showListElement = document.getElementById("showListView");
     showListElement.innerHTML = "";
     for(const show of shows) {
@@ -15,22 +15,25 @@ function renderShows(date) {
 }
 
 
-function onShowItemClicked(show) {
+async function onShowItemClicked(show) {
     console.log('onShowItemClicked');
     if(!show) return;
     let selectedShowNameLabel = document.getElementById("selectedShowNameLabel");
     selectedShowNameLabel.innerText = show.name;
-    renderSongs(show);
+    await renderSongs(show);
     let addSongButton = document.getElementById("addSongButton");
     addSongButton.dataset.showId = show.id;
     selectedShowId = show.id;
 }
 
-function renderSongs(show) {
+async function renderSongs(show) {
+
+    let showSongs = await getShowSongs(show.id);
+
     let songListView = document.getElementById("songListView");
     songListView.innerHTML = "";
-    if(show.songs) {
-        for(const song of Object.entries(show.songs).map(e => e[1])) {
+    if(showSongs) {
+        for(const song of showSongs) {
             let songListElement = getSongListItemElement(song, show);
             songListView.appendChild(songListElement);
         }
@@ -127,12 +130,13 @@ function getActionButtonElement(refId, icon, onClick) {
     return container;
 }
 
-function onDeleteShowClicked(e) {
+async function onDeleteShowClicked(e) {
     if(!e) return;
     e.stopPropagation();
     if(confirm("Are you sure you want to delete this show?")) {
         let showId = e.currentTarget.dataset.id;
-        showRepository.delete(showId);
+        if(!(await deleteShow(showId)))
+            return;
         let selector = `div.showListItem[data-id='${showId}']`;
         let listElement = document.querySelector(selector);
         listElement.remove();
@@ -144,24 +148,27 @@ function onDeleteShowClicked(e) {
 
 function onAddShowClicked(e) {
     e.stopPropagation();
-    location.href='./showEditPage.html';
+    location.href='/show/edit';
 }
 
 function onEditShowClicked(e) {
     e.stopPropagation();
     let showId = e.currentTarget.dataset.id;
-    location.href=`./showEditPage.html?showId=${showId}`;
+    location.href=`/show/edit/${showId}`;
 }
 
-function onDeleteSongClicked(e) {
+async function onDeleteSongClicked(e) {
     e.stopPropagation();
     let songId = e.currentTarget.dataset.id;
-    showRepository.removeSong(songId, selectedShowId);
+
+    if(!(await deleteShowSong(selectedShowId, songId)))
+        return;
     
     let selector = `div.songListItem[data-id='${songId}']`;
     let listElement = document.querySelector(selector);
     listElement.remove();
 }
+
 
 function onFilterRadioChanged(e) {
     let radio = e.currentTarget;
@@ -180,19 +187,27 @@ function onFilterRadioChanged(e) {
     }
 }
 
-function onAddSongClicked(e) {
+async function onAddSongClicked(e) {
     e.stopPropagation();
     let songInput = document.getElementById("songInput");
     let selectedSongId = songInput.dataset.songId;
     if(!selectedSongId)
         return;
-    let song = songRepository.get(selectedSongId);
-
     let selectedShowId = e.currentTarget.dataset.showId;
-    show = showRepository.get(selectedShowId); 
+    let song = await getSong(selectedSongId);
+
+    let show = await getShow(selectedShowId); 
+    if(!show) {
+        console.error('the show cannot be accessed in data');
+        return;
+    }
     show.songs = show.songs || {}; //sanity check, make sure we have a proper songs object;
     show.songs[song.id] = song;
-    showRepository.addUpdate(show);
+
+    if(!await postShow(show)) {
+        alert('The song could not be added');
+        return;
+    }
     
     //add to list
     let songListView = document.getElementById("songListView");
@@ -222,14 +237,14 @@ function addPageEventListeners() {
     dateInput.addEventListener("change", onDateInputChanged);
 }
 
-function buildSongSuggestionBox() {
-    let songData = songRepository.getAll();
+async function buildSongSuggestionBox() {
+    let songData = await getSongs();
     console.log('songData', songData);
     autocomplete(document.getElementById("songInput"), songData);
 }
 
+
 function onDOMContentLoaded() {
-    buildSongSuggestionBox();
 
     //default the date selector to today
     let initialDate = new Date();
@@ -237,6 +252,8 @@ function onDOMContentLoaded() {
 
     addPageEventListeners();
     renderShows();
+    
+    buildSongSuggestionBox(); //no need to await
 }
 
 
