@@ -31,9 +31,10 @@
 
                             <div class="filterContainer">
                                 <div>Filter:</div>
-                                <input type="radio" class="filterRadio" name="filterRadio" value="all" checked>All</input>
-                                <input type="radio" class="filterRadio" name="filterRadio" value="date">By Date</input>
-                                <input type="date" class="dateTimeSelector" id="dateInput" disabled/>
+                                <input type="radio" class="filterRadio" name="filterRadio" id="filterRadioAll" value="all" >All</input>
+                                <input type="radio" class="filterRadio" name="filterRadio" id="filterRadioDate" value="date" >By Date</input>
+                                <input type="hidden" id="hdnSessionDate" value="<%= filterDate %>" />
+                                <input type="date" class="dateTimeSelector" id="dateInput" disabled="<%= (!filterDate || filterDate.length <=0) %>"/>
                             </div>
 
                             <div class="dateSelectorContainer">

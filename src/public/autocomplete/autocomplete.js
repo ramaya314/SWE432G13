@@ -31,8 +31,8 @@ function autocomplete(inp, arr) {
             b.innerHTML = "<strong>" + arr[i].song_name.substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].song_name.substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i].song_name + "'>";
-            b.dataset.songId = arr[i].id; 
+            b.innerHTML += `<input type='hidden' value="${arr[i].song_name}">`;
+            b.dataset.songId = arr[i]._id; 
             /*execute a function when someone clicks on the item value (DIV element):*/
             b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/

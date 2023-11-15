@@ -1,27 +1,37 @@
 const DataRepository = require('./dataRepository');
 var moment = require('moment'); 
+var showModel = require('../models/show');
+const SongRepository = require('./songRepository');
 
 class ShowRepository extends DataRepository{
     constructor(initialData) {
-        super(initialData);
-        this.moduleName = "shows"
-        this.loadData();
+        super(initialData, showModel);
     }
 
-    removeSong(songId, showId) {
-        let show = this.get(showId);
+    async removeSong(songId, showId) {
+        let show = await this.get(showId);
         if(!show) return;
-        delete show.songs[songId];
-        this.addUpdate(show);
+        await show.songs.delete(songId);
+        await show.save();
+    }
+    
+    async addSong(songId, showId) {
+        let show = await this.get(showId);
+        if(!show) 
+            return false;
+        let songRepository = new SongRepository();
+        let song = await songRepository.get(songId);
+        if(!song)
+            return false;
+        show.songs.set(song._id, song);
+        await show.save();
+        return true;
     }
 
-    getShowsByDate(date) {
-        let shows = this.getAll();
-        console.log(date);
+    async getShowsByDate(date) {
+        let shows = await this.getAll();
         let dateObj = new Date(parseInt(date));
-        console.log(dateObj);
         let dateString = moment.utc(dateObj).format('YYYY-MM-DD');
-        console.log(dateString);
         let filteredShows = shows.filter(show => show.date == dateString)
         return filteredShows;
     }

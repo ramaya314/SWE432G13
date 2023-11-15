@@ -32,7 +32,7 @@
                     
                     <div class="inputRow">
                         <div class="inputLabel">Date:</div>
-                        <div class="inputControl"><input style="width: 375px;"  type="date" id="dateInput" value="<%= show && show.date %>"/></div>
+                        <div class="inputControl"><input style="width: 375px;"  type="date" id="dateInput" value="<%= (show && show.date) || (sessionDate && new Date(parseInt(sessionDate)).toISOString().split('T')[0]) %>"/></div>
                     </div>
                     
                     <div class="inputRow">

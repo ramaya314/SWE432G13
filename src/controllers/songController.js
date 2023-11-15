@@ -1,18 +1,21 @@
 const express = require("express");
+const asyncHandler = require("express-async-handler");
 const router = express.Router();
 const SongRepository = require('../dal/repositories/songRepository');
 
 const songRepository = new SongRepository();
 
 router.route('/')
-    .get(function(req, res) {
-        res.json(songRepository.getAll());
-    })
+    .get(asyncHandler(async (req, res) => {
+        res.json(await songRepository.getAll());
+    }))
     
 router.route('/:id')
-    .get(function(req, res) {
+    .get(asyncHandler(async (req, res) => {
         var id = req.params.id;
-        res.json(songRepository.get(id));
-    })
+        var result = await songRepository.get(id);
+        console.log('get song result', result);
+        res.json(result);
+    }))
   
 module.exports = router;

@@ -43,7 +43,7 @@ async function onSaveClick() {
     let saveButton = document.getElementById("saveButton");
     let showId = saveButton.dataset.id;
 
-    let show = (await getShow(showId)) || {};
+    let show = showId ? ((await getShow(showId)) || {}) : {};
     show.name = document.getElementById("nameInput").value;
     show.date = document.getElementById("dateInput").value;
     show.from = document.getElementById("fromInput").value;
@@ -56,6 +56,4 @@ async function onSaveClick() {
     } else {
         alert('The show could not be saved');
     }
-
-    location.href=`/producer`;
 }

@@ -105,6 +105,12 @@ select {
     line-height: 25px;
 }
 
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
+
 input[disabled] {
     background-color: var(--background-elevated-highlight) !important;
     color:var(--text-subdued) !important;

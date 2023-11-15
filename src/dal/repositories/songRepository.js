@@ -1,10 +1,9 @@
 const DataRepository = require('./dataRepository');
+var songModel = require('../models/song');
 
 class SongRepository extends DataRepository{
     constructor(initialData) {
-        super(initialData);
-        this.moduleName = "songs"
-        this.loadData();
+        super(initialData, songModel);
     }
 }
 
