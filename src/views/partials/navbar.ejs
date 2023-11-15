@@ -1,10 +1,25 @@
 
 <link rel="stylesheet" href="/css/navbar.css" />
 <div class="navbar">
-    <img src="/images/logo-placeholder-image.png" class="navBarLogo" />
+    <img src="/images/logo-placeholder-image.png" class="navBarLogo" onclick="logout()"/>
     <div class="navBarControls">
         <div class="navBarControls_option">Listen</div>
         <div class="navBarControls_option active">Produce</div>
         <div class="navBarControls_option">DJ</div>
     </div>
+    <script>
+        async function logout() {
+            try{
+                const logout = await fetch(`/logout`);
+                if(!logout.ok) {
+                    throw new Error(logout.statusText)
+                }
+                alert('session ended.')
+                location.reload();
+            } catch(e) {
+                console.error("error ending session: ");
+                console.error(e);
+            }
+        }
+    </script>
 </div>

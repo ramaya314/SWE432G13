@@ -23,4 +23,10 @@ router.route('/show/edit/:id')
         res.render('pages/show/edit', { show });
     }));
 
+    
+router.get('/logout', function(req, res) {
+    req.session.destroy();
+    res.sendStatus(200);
+});
+
 module.exports = router;
