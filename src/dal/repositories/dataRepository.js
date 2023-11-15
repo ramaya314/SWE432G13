@@ -1,50 +1,38 @@
 
-const fs = require('fs');
-const path = require('node:path'); 
-
-function DataRepository(initialData) {
+function DataRepository(initialData, model) {
     this.initialData = initialData;
+    this.model = model;
     return this;
 }
 
 DataRepository.prototype = {
-    dataFilePath: function() {
-        return path.join(__dirname, '..', '..', 'dal', 'data', `${this.moduleName}.json`);
+    get: async function (id) {
+        let matches = await this.model.find({_id: id});
+        if(matches.length > 0)
+            return matches[0];
+        else return null;
     },
-    loadData: function () {
-        if (fs.existsSync(this.dataFilePath())) {
-            this.data = JSON.parse(fs.readFileSync(this.dataFilePath()));
-        } else if(this.initialData) {
-            this.data = this.initialData;
-        } else {
-            this.data = {};
-        }
+    getAll: async function () {
+        return await this.model.find();
     },
-    writeData: function() {
-        fs.writeFileSync(this.dataFilePath(), JSON.stringify(this.data));
-    },
-    get: function (id) {
-        return this.data[id];
-    },
-    getAll: function () {
-        return this.data ? Object.entries(this.data).map(entry => entry[1]) : [];
-    },
-    addUpdate: function (object) {
+    addUpdate: async function (object) {
         if(!object) {
             console.error('no object was provided for addUpdate');
             return;
         }
-
-        if(!object.id) {
-            object.id = Date.now(); //pseudo-hash, unique enough
+        if(!object._id) {
+            const updateObject = new this.model(object);
+            await updateObject.save();
+        } else {
+            var query = {'_id': object._id};
+            await this.model.findOneAndUpdate(query, object, {upsert: true});
         }
-        this.data[object.id] = object;
-        this.writeData();
+
     },
-    delete: function(id) {
-        if(!id) return;
-        delete this.data[id];
-        this.writeData();
+    delete: async function(id) {
+        if(!id) return false;
+        await this.model.deleteOne({_id: id});
+        return true;
     }
 }
 

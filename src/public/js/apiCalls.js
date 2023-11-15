@@ -22,7 +22,7 @@ async function getShowSongs(showId) {
             throw new Error(showResponse.statusText)
         }
         const songs = await showResponse.json();
-        return songs;
+        return songs ? Object.entries(songs).map(entry => entry[1]) : [];
     } catch(e) {
         console.error("error fetching show songs: ");
         console.error(e);
@@ -43,9 +43,21 @@ async function deleteShowSong(showId, songId) {
     return false;
 }
 
+async function addShowSong(showId, songId) {
+    try{
+        const putResponse = await fetch(`/api/shows/${showId}/songs/${songId}`, { method: 'PUT'});
+        if(!putResponse.ok) {
+            throw new Error(putResponse.statusText)
+        }
+        return true;
+    } catch(e) {
+        alert("error adding show song: " + e);
+    }
+    return false;
+}
+
 async function postShow(show) {
     try{
-        console.log('posting show', show);
         const updateResponse = await fetch('/api/shows', {
             method: 'POST',
             headers: {

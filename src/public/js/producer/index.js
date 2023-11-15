@@ -22,13 +22,13 @@ async function onShowItemClicked(show) {
     selectedShowNameLabel.innerText = show.name;
     await renderSongs(show);
     let addSongButton = document.getElementById("addSongButton");
-    addSongButton.dataset.showId = show.id;
-    selectedShowId = show.id;
+    addSongButton.dataset.showId = show._id;
+    selectedShowId = show._id;
 }
 
 async function renderSongs(show) {
 
-    let showSongs = await getShowSongs(show.id);
+    let showSongs = await getShowSongs(show._id);
 
     let songListView = document.getElementById("songListView");
     songListView.innerHTML = "";
@@ -62,10 +62,10 @@ function getSongListItemElement(song, show) {
     
     let controlsContainer = document.createElement('div');
     controlsContainer.classList.add('controlListView_option_actions');
-    controlsContainer.appendChild(getActionButtonElement(song.id, 'delete', onDeleteSongClicked))
+    controlsContainer.appendChild(getActionButtonElement(song._id, 'delete', onDeleteSongClicked))
 
     //itemContainer.appendChild(djImage);
-    itemContainer.dataset.id = song.id;
+    itemContainer.dataset.id = song._id;
     itemContainer.appendChild(textContentContainer);
     itemContainer.appendChild(controlsContainer);
 
@@ -100,14 +100,14 @@ function getShowListItemElement(show) {
     
     let controlsContainer = document.createElement('div');
     controlsContainer.classList.add('controlListView_option_actions');
-    controlsContainer.appendChild(getActionButtonElement(show.id, 'edit',onEditShowClicked))
-    controlsContainer.appendChild(getActionButtonElement(show.id, 'delete', onDeleteShowClicked))
+    controlsContainer.appendChild(getActionButtonElement(show._id, 'edit',onEditShowClicked))
+    controlsContainer.appendChild(getActionButtonElement(show._id, 'delete', onDeleteShowClicked))
 
     itemContainer.appendChild(djImage);
     itemContainer.appendChild(textContentContainer);
     itemContainer.appendChild(controlsContainer);
 
-    itemContainer.dataset.id = show.id;
+    itemContainer.dataset.id = show._id;
     itemContainer.addEventListener("click", e => {
         e.stopPropagation();
         onShowItemClicked(show);
@@ -194,22 +194,15 @@ async function onAddSongClicked(e) {
     if(!selectedSongId)
         return;
     let selectedShowId = e.currentTarget.dataset.showId;
-    let song = await getSong(selectedSongId);
 
-    let show = await getShow(selectedShowId); 
-    if(!show) {
-        console.error('the show cannot be accessed in data');
-        return;
-    }
-    show.songs = show.songs || {}; //sanity check, make sure we have a proper songs object;
-    show.songs[song.id] = song;
-
-    if(!await postShow(show)) {
+    if(!await addShowSong(selectedShowId, selectedSongId)) {
         alert('The song could not be added');
         return;
     }
     
     //add to list
+    let song = await getSong(selectedSongId);
+    let show = await getShow(selectedShowId); 
     let songListView = document.getElementById("songListView");
     let songListElement = getSongListItemElement(song, show);
     songListView.appendChild(songListElement);
@@ -239,19 +232,29 @@ function addPageEventListeners() {
 
 async function buildSongSuggestionBox() {
     let songData = await getSongs();
-    console.log('songData', songData);
     autocomplete(document.getElementById("songInput"), songData);
 }
 
 
 function onDOMContentLoaded() {
-
     //default the date selector to today
-    let initialDate = new Date();
-    document.getElementById('dateInput').valueAsDate = initialDate;
+    let sessionDate = document.getElementById('hdnSessionDate').value;
+    let dateInput = document.getElementById('dateInput');
+    if(sessionDate && sessionDate.length > 0) {
+        sessionDate = new Date(parseInt(sessionDate));
+        dateInput.valueAsDate = sessionDate;
+        dateInput.disabled = false;
+        document.getElementById('filterRadioDate').checked = true;
+        renderShows(sessionDate);
+    } else {
+        let initialDate = new Date();
+        dateInput.valueAsDate = initialDate;
+        dateInput.disabled = true;
+        document.getElementById('filterRadioAll').checked = true;
+        renderShows();
+    }
 
     addPageEventListeners();
-    renderShows();
     
     buildSongSuggestionBox(); //no need to await
 }

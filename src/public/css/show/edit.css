@@ -30,6 +30,12 @@
     line-height: 25px;
 }
 
+
+.inputControl input[type="date"]::-webkit-calendar-picker-indicator,
+.inputControl input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
+
 .actionButton {
     font-size:large;
     width:100px;
