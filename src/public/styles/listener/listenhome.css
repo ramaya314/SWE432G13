@@ -1,0 +1,102 @@
+.home-content {
+    background-color: var(--essential-subdued);
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    border-radius: 5px;
+    flex-direction: column;
+    box-shadow: 2px 0px 10px 2px black;
+}
+
+button {
+    background: transparent;
+    border-style: hidden;
+}
+
+button:hover {
+    color: var(--text-bright-accent);
+}
+
+.listen-carousel img{
+    width: 20rem;
+    height: auto;
+    padding: 2rem 0rem 1rem 0rem;
+}
+
+.md-60 {
+    font-size: 5rem !important;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.carousel-controls span:hover {
+    color: var(--text-positive);
+}
+
+.carousel-controls img {
+    width: 4rem;
+}
+
+.carousel-controls img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+.suggest-text {
+    padding: 4rem 0rem 0rem 2rem;
+}
+
+.dj-profiles img {
+    width: 4rem;
+    padding: 2rem 0.5rem 4rem 0.5rem;
+    transition: transform 330ms ease-in-out;
+}
+
+.dj-profiles img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.upcoming-events {
+    background-color: var(--decorative-base);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 16rem;
+}
+
+.event-listing {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.25rem;
+    margin: 0.4rem;
+    border: solid #000;
+    border-width: 0.05rem;
+    border-radius: 0.25rem;
+}
+
+.listing-info {
+    display: flex;
+}
+
+.listing-info-text {
+    padding: 0rem 2rem;
+    color: var(--decorative-subdued);
+}
+
+.event-listing img {
+    width: 3rem;
+}

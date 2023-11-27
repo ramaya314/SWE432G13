@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../../styles/palette.css" />
+        <link rel="stylesheet" href="../../styles/main.css" />
+        <link rel="stylesheet" href="../../styles/listener/listener.css" />
+        <link rel="stylesheet" href="../../styles/listener/listenhome.css" />
+    </head>
+
+    <body class = "encore-dark-theme">
+
+        <%- include('../../partials/navbar.ejs') %>
+
+        <div class="content">
+            <div class="pageHeader">
+                <div class="contentTitle">
+                    Listen
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT FOR LISTENER HOME -->
+            <main>
+                <div class="listen-content">
+                
+                    <%- include('../../partials/listener/sidebar.ejs') %>                  
+    
+                    <div class="main-content">
+                        <div class="home-content">
+                            <div class="listen-carousel">
+                                <img src="../../images/banner.png" />
+                            </div>
+        
+                            <div class="carousel-controls">
+                                <button class="material-symbols-outlined md-60">
+                                    skip_previous
+                                </button>
+                                <button id="play-btn" class="material-symbols-outlined md-60">
+                                    play_circle
+                                </button>
+                                <button class="material-symbols-outlined md-60">
+                                    skip_next
+                                </button>
+                            </div>
+        
+                            <h1 class="suggest-text">Suggested DJ's</h1>
+        
+                            <div class="dj-profiles">
+                                <button>
+                                    <img src="../../images/icons/dj-icon.png" /> 
+                                </button>
+
+                                <button>
+                                    <img src="../../images/icons/dj-icon.png" /> 
+                                </button>
+
+                                <button>
+                                    <img src="../../images/icons/dj-icon.png" /> 
+                                </button>
+
+                                <button>
+                                    <img src="../../images/icons/dj-icon.png" /> 
+                                </button>
+
+                                <button>
+                                    <img src="../../images/icons/dj-icon.png" /> 
+                                </button>
+                            </div>
+        
+                            <h1 class="upcoming-text">Upcoming Events</h1>
+        
+                            <!-- Dummy content to fill list -->
+        
+                            <div class="upcoming-events">
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                                <button class="event-listing" onclick="alert('Bobby Hill plays @ 8:45 PM')">
+                                    <img class="listing-img" src="../../images/icons/dj-icon.png" />
+        
+                                    <div class="listing-info">
+                                        <div class="listing-info-text">Bobby Hill</div>
+                                        <div class="listing-info-text">8:45 PM</div>
+                                    </div>
+                                </button>
+                        </div>
+    
+                        <div class="music-bar">
+    
+                            <!-- Contains album cover, song name, and artist name -->
+                            <div class="music-bar-info">
+                                <img src="../../images/example-cover.jpg" />
+                                <div class="music-bar-text">
+                                    <div class="music-info-ti">Song Name</div>
+                                    <div class="music-info-ti">Artist Name</div>
+                                </div>
+                            </div>
+                            
+                            <div class="music-bar-play">
+                                <audio controls autoplay muted>
+                                    <source src="../../audio/trumpet.mp3" type="audio/mp3">
+                                    Audio not supported by your browser
+                                </audio>
+                            </div>
+    
+                            <div class="music-bar-func">
+                                <button id="fav-btn" class="material-symbols-outlined md-34 fav-icon">
+                                    favorite
+                                </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <% include('../../partials/footer.ejs') %>
+
+        <script src="../../scripts/listener/home.js"></script>
+        <script src="../../scripts/listener/listener.js"></script>
+    </body>
+</html>

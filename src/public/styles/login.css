@@ -1,0 +1,38 @@
+main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+input {
+    margin-bottom: 1rem;
+}
+
+#login-btn { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 25%; 
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+#login-heading {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fail-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
