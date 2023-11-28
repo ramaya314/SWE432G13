@@ -9,30 +9,47 @@ input {
     margin-bottom: 1rem;
 }
 
+#login-wrapper {
+    display: flex;
+    width: 50%;
+    height: 60%;
+    background-color: #363636;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    box-shadow: 10px 5px 5px #3e424b;
+}
+
 #login-btn { 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-button {
-    width: 25%; 
-}
-
 #login-form {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 50%;
+}
+
+button {
+    width: 50%; 
+    font-size: 1.5rem;
 }
 
 #login-heading {
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
 }
 
 #fail-div {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+input {
+    font-size: 1.5rem;
 }
