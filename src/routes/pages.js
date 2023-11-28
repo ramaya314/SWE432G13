@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const asyncHandler = require('express-async-handler')
+const ShowRepository = require('../database/repositories/showRepository')
 
 const listenNavOptions  = {
     route: 'Listener',
@@ -89,7 +90,7 @@ router.route('/show/edit/:id')
     .get(asyncHandler(async (req, res) => {
         let show = await (new ShowRepository()).get(req.params.id);
         console.log('got show', show);
-        res.render('pages/show/edit', { show });
+        res.render('pages/show/edit', { show, navOptions: producerNavOptions });
     }));
 
 
