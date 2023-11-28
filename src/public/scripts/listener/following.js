@@ -123,10 +123,13 @@ async function retrieveFollowed() {
 
 async function loadFollowers() {
     const followingDb = await retrieveFollowed()
+
     await database().then((data) => {
 
+        console.log(data)
+
         data.forEach((element) => {
-            const id = element._id.toString()
+            const id = element.name.toString()
             if (followingDb.includes(id)) {
                 following = [...following, element]
             }
