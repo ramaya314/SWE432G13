@@ -10,6 +10,7 @@ const userRoutes = require('./routes/users')
 const apiRoutes = require('./routes/api')
 
 const dbConnection = require('./database/connection')
+const usc = require('./database/repositories/userRepository')
 
 const port = process.env.PORT
 
@@ -23,7 +24,7 @@ app.use(session({
     saveUninitialized: true,
 }))
 
-dbConnection.connectWithAuth()
+dbConnection.connect(`${process.env.MONGO_CONNECTION_STRING}`)
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs')
@@ -47,3 +48,5 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.redirect('/pages/login')
 })
+
+usc.createUser('user', 'pass123')
