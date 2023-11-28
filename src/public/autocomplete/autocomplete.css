@@ -1,0 +1,51 @@
+/*
+Code for this was obtained on https://www.w3schools.com/howto/howto_js_autocomplete.asp
+*/
+
+
+.autocomplete * { box-sizing: border-box; }
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete input {
+  border: 1px solid transparent;
+  background-color: var(--background-base);
+  color:var(--text-base);
+  padding: 10px;
+  font-size: 16px;
+}
+.autocomplete input[type=text] {
+    background-color: var(--background-base);
+    color:var(--text-base);
+  width: 100%;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid;
+  border-color: var(--essential-subdued);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--background-base);
+  border-bottom: 1px solid;
+  border-color: var(--essential-subdued);
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: var(--background-highlight);
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}

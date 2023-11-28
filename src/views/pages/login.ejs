@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../../styles/palette.css" />
+        <link rel="stylesheet" href="../../styles/main.css" />
+        <link rel="stylesheet" href="../../styles/navbar.css" />
+        <link rel="stylesheet" href="../../styles/login.css" />
+    </head>
+
+    <body class = "encore-dark-theme">
+
+        <main>
+           
+            <form id="login-form" method="POST">
+                <div id="login-heading">
+                    <h1>Login</h1>
+                </div>
+
+                <label for="uname">Username</label>
+                <input type="text" id="username-input" placeholder="Enter Username" name="uname" required>
+
+                <label for="pwd">Password</label>
+                <input type="password" id="pwd-input" placeholder="Enter Password" name="pwd" required>
+
+                <div id="login-btn">
+                    <button type="submit">Login</button>
+                </div>
+            </form>             
+
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+
+        <script src="../../scripts/login.js"></script>
+    </body>
+</html>

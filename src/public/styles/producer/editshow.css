@@ -1,0 +1,42 @@
+.controlsContainer {
+    background-color: var(--background-elevated-base);
+    margin:10px;
+    border-radius: 5px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.inputRow {
+    display:flex;
+    flex-direction: row;
+}
+.inputRow>div {
+    margin:5px;
+}
+.inputLabel {
+    width:70px;
+}
+.inputControl input[type="text"], 
+.inputControl select {
+    background-color: var(--background-base);
+    border-color: var(--essential-subdued);
+    color:var(--text-base);
+    line-height: 25px;
+}
+
+.actionButton {
+    font-size:large;
+    width:100px;
+    background-color: var(--background-base);
+    border-color: var(--essential-subdued);
+    color:var(--text-base);
+    padding:10px 20px;
+}
+
+
+.actionButton:hover {
+    color:var(--essential-bright-accent);
+    background-color: var(--background-highlight);
+}

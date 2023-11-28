@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="../../styles/palette.css" />
+        <link rel="stylesheet" href="../../styles/main.css" />
+        <link rel="stylesheet" href="../../styles/producer/produce.css" />
+
+        <script src="../../scripts/apiCalls.js" ></script>
+        <script src="../../scripts/producer/index.js" ></script>
+        
+        <link rel="stylesheet" href="../../autocomplete/autocomplete.css" />
+        <script src="../../autocomplete/autocomplete.js"></script>
+    </head>
+    <body class="encore-dark-theme">
+        <div class="page">
+            
+            <%- include('../../partials/navbar.ejs'); %>
+
+            <div class="content">
+                <div class="pageHeader">
+                    <div class="contentTitle">
+                        Produce
+                    </div>
+                </div>
+                <div class="produceControlsContainer">
+                    
+                    <!--component: upcomingShowListView-->
+                    <div class="controlListViewContainer">
+                        <div class="controlListViewHeader">
+                            <div class="controlListViewHeaderTitle">Upcoming Shows</div>
+
+                            <div class="filterContainer">
+                                <div>Filter:</div>
+                                <input type="radio" class="filterRadio" name="filterRadio" id="filterRadioAll" value="all" >All</input>
+                                <input type="radio" class="filterRadio" name="filterRadio" id="filterRadioDate" value="date" >By Date</input>
+                                <input type="hidden" id="hdnSessionDate" value="<%= filterDate %>" />
+                                <input type="date" class="dateTimeSelector" id="dateInput" disabled="<%= (!filterDate || filterDate.length <=0) %>"/>
+                            </div>
+
+                            <div class="dateSelectorContainer">
+                                <div class="iconButton" id="addShowButton">
+                                    <span class="material-symbols-outlined">
+                                        add_circle
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="controlListView" id="showListView">
+                        </div>
+                    </div>
+
+                    
+                    <!--component: upcomingShowListView--
+                    <div class="controlListViewContainer hidden" id="songListContainer">
+                        <div class="controlListViewHeader">
+                            <div class="controlListViewHeaderTitle" id="selectedShowNameLabel">Show Name</div>
+
+                            <div  class="searchBar">
+                                <div class="autocomplete searchBar" style="width:300px;">
+                                    <input id="songInput" type="text" placeholder="search song..." />
+                                </div>
+                                
+                                <div class="iconButton" id="addSongButton">
+                                    <span class="material-symbols-outlined">
+                                        add_circle
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        --component: upcomingShowListViewItem--
+                        <div class="controlListView" id="songListView">
+                        </div>
+
+
+                    </div>
+                    -->
+
+                </div>
+            </div>
+            <%- include('../../partials/footer.ejs'); %>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="../../styles/palette.css" />
+        <link rel="stylesheet" href="../../styles/main.css" />
+        <link rel="stylesheet" href="../../styles/navbar.css" />
+        <link rel="stylesheet" href="../../styles/footer.css" />
+        <link rel="stylesheet" href="../../styles/producer/editshow.css" />
+        
+        <script src="../../dal/data/songs.js"></script>
+        <script src="../../dal/data/shows.js"></script>
+        <script src="../../dal/repositories/dataRepository.js"></script>
+        <script src="../../dal/repositories/showRepository.js"></script>
+        <script src="../../dal/repositories/songRepository.js"></script>
+        <script src="./showEdit.js" ></script>
+    </head>
+    <body class="encore-dark-theme">
+        <div class="page">
+            <!--component: navbar-->
+            <div class="navbar">
+                <img src="../../images/logo-placeholder-image.png" class="navBarLogo" />
+                <div class="navBarControls">
+                    <div class="navBarControls_option">Listen</div>
+                    <div class="navBarControls_option active">Produce</div>
+                    <div class="navBarControls_option">DJ</div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="pageHeader">
+                    <div class="backButton iconButton" onclick="location.href='./producePage.html';">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                    </div>
+                    <div class="contentTitle" id="pageTitleLabel">
+                        Add/Edit Show
+                    </div>
+                </div>
+                <div class="controlsContainer">
+                    <div class="inputRow">
+                        <div class="inputLabel">Name:</div>
+                        <div class="inputControl"><input type="text" style="width: 375px;" id="nameInput" /></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Date:</div>
+                        <div class="inputControl"><input style="width: 375px;"  type="date" id="dateInput"/></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Time:</div>
+                        <div class="inputControl"><input type="time" id="fromInput"/> to <input type="time" id="toInput"></div>
+                    </div>
+                    
+                    <div class="inputRow" style="margin-bottom:20px;">
+                        <div class="inputLabel">DJ:</div>
+                        <div class="inputControl">
+                            <select style="width:375px;height:25px;" id="djSelect">
+                                <option>Select DJ</option>
+                                <option value="1">DJ Tom</option>
+                                <option value="2">DJ Travis</option>
+                                <option value="3">DJ Mark</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="actionButton" style="margin-left: 200px;" id="saveButton" onclick="onSaveClick();">
+                        Save
+                    </button>
+
+                </div>
+            </div>
+            <div class="footer">
+                GMU SWE432 G13
+            </div>
+        </div>
+    </body>
+</html>

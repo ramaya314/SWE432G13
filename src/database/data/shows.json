@@ -1,0 +1,88 @@
+{
+    "1697992364258": {
+        "name": "testShow aasd",
+        "date": "2023-10-18",
+        "from": "14:32",
+        "to": "15:32",
+        "dj": "Select DJ",
+        "songs": {
+            "31": {
+                "id": 31,
+                "artist": "USA For Africa",
+                "song_name": "We Are the World",
+                "year": 1985,
+                "total": 26.681,
+                "usa": 10.855,
+                "uk": 13.627,
+                "eur": 18.761,
+                "row": 1.51
+            },
+            "197": {
+                "id": 197,
+                "artist": "Jo Stafford",
+                "song_name": "You Belong to Me",
+                "year": 1952,
+                "total": 18.837,
+                "usa": 12.15,
+                "uk": 8.01,
+                "eur": 0,
+                "row": 0
+            },
+            "198": {
+                "id": 198,
+                "artist": "The Beatles",
+                "song_name": "Paperback Writer",
+                "year": 1966,
+                "total": 18.833,
+                "usa": 10.522,
+                "uk": 10.084,
+                "eur": 8.331,
+                "row": 0.51
+            }
+        },
+        "id": 1697992364258
+    },
+    "1697995450183": {
+        "name": "testShow edited",
+        "date": "2023-10-18",
+        "from": "14:32",
+        "to": "15:32",
+        "dj": "Select DJ",
+        "songs": {
+            "51": {
+                "id": 51,
+                "artist": "No Doubt",
+                "song_name": "Don't Speak",
+                "year": 1997,
+                "total": 25.142,
+                "usa": 6.687,
+                "uk": 9.395,
+                "eur": 18.522,
+                "row": 1.673
+            },
+            "86": {
+                "id": 86,
+                "artist": "Tony Orlando & Dawn",
+                "song_name": "Tie a Yellow Ribbon 'round the Old Oak Tree",
+                "year": 1973,
+                "total": 22.858,
+                "usa": 12.339,
+                "uk": 15.219,
+                "eur": 6.933,
+                "row": 0.593
+            },
+            "147": {
+                "id": 147,
+                "artist": "Petula Clark",
+                "song_name": "Downtown",
+                "year": 1965,
+                "total": 20.447,
+                "usa": 13.274,
+                "uk": 7.504,
+                "eur": 7.632,
+                "row": 0.537
+            }
+        },
+        "id": 1697995450183
+    }
+}

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="../../styles/palette.css" />
+        <link rel="stylesheet" href="../../styles/main.css" />
+        <link rel="stylesheet" href="../../styles/show/edit.css" />
+        
+        <script src="../../scripts/apiCalls.js" ></script>
+        <script src="../../scripts/show/edit.js" ></script>
+    </head>
+    <body class="encore-dark-theme">
+        <div class="page">
+  
+            <%- include('../../partials/navbar.ejs'); %>
+
+            <div class="content">
+                <div class="pageHeader">
+                    <div class="backButton iconButton" onclick="location.href='/pages/producer';">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                    </div>
+                    <div class="contentTitle" id="pageTitleLabel">
+                        <%= show && show.id ? 'Edit' : 'Add' %> Show
+                    </div>
+                </div>
+                <div class="controlsContainer">
+                    <div class="inputRow">
+                        <div class="inputLabel">Name:</div>
+                        <div class="inputControl"><input type="text" style="width: 375px;" id="nameInput" value="<%= show && show.name %>"/></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Date:</div>
+                        <div class="inputControl"><input style="width: 375px;"  type="date" id="dateInput" value="<%= (show && show.date) || (sessionDate && new Date(parseInt(sessionDate)).toISOString().split('T')[0]) %>"/></div>
+                    </div>
+                    
+                    <div class="inputRow">
+                        <div class="inputLabel">Time:</div>
+                        <div class="inputControl"><input type="time" id="fromInput" value="<%= show && show.from %>"/> to <input type="time" id="toInput" value="<%= show && show.to %>"></div>
+                    </div>
+                    
+                    <div class="inputRow" style="margin-bottom:20px;">
+                        <div class="inputLabel">DJ:</div>
+                        <div class="inputControl">
+                            <select style="width:375px;height:25px;" id="djSelect" value="<%= show && show.dj %>">
+                                <option>Select DJ</option>
+                                <option value="1">DJ Tom</option>
+                                <option value="2">DJ Travis</option>
+                                <option value="3">DJ Mark</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="actionButton" style="margin-left: 200px;" id="saveButton" onclick="onSaveClick();" data-id="<%= show && show.id %>">
+                        Save
+                    </button>
+
+                </div>
+            </div>
+            <%- include('../../partials/footer.ejs'); %>
+        </div>
+    </body>
+</html>

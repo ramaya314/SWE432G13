@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Aria",
+      "category": "Electronic",
+      "description": "Bringing you the latest in electronic and dance music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Groove Master",
+      "category": "Funk",
+      "description": "Spinning the grooviest funk tracks around",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Jazz Cat",
+      "category": "Jazz",
+      "description": "Soothing jazz tunes for a relaxing evening.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    }
+]

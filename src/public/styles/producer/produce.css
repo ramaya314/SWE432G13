@@ -1,0 +1,91 @@
+.produceControlsContainer {
+    padding:20px;
+    display:flex;
+    overflow-y: hidden;
+}
+
+.controlListViewContainer {
+    background-color: var(--background-elevated-base);
+    margin:10px;
+    border-radius: 5px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    flex:1;
+}
+
+.controlListViewHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.controlListViewHeaderTitle {
+
+}
+
+.dateTimeSelector {
+
+}
+.iconButton {
+    cursor: pointer;
+}
+.iconButton:hover {
+    color:var(--essential-bright-accent)
+}
+
+.dateTimeLabel {
+    font-size: small;
+}
+
+.showName {
+    font-size: larger;
+}
+
+.controlListView {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.controlListView_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid;
+    border-color: var(--text-subdued);
+    margin: 3px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.controlListView_option:hover {
+    border-color:var(--essential-bright-accent)
+}
+
+.controlListView_option_profileImage {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin: 10px;
+}
+.controlListView_option_textContent {
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    padding:15px;
+}
+
+.controlListView_option_textContent .showName {
+    font-size: large;
+}
+.controlListView_option_actions {
+    display:flex;
+    flex-direction: row;
+}
+
+.controlListView_option_actions .iconButton{
+    margin:5px;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,52 @@
+<div class="sidebar">
+    <ul class="sidebar-buttons">
+        <li>
+            <%  if (currPage === 'home'){%>
+            <div class="side-button active">
+            <%}else{%>
+            <div class="side-button">
+            <%}%>
+                <span class="material-symbols-outlined md-34">
+                    home
+                </span>
+                <a href="/pages/listener">Home</a>
+            </div>
+        </li>
+        <li>
+            <%  if (currPage === 'search'){%>
+            <div class="side-button active">
+            <%}else{%>
+            <div class="side-button">
+            <%}%>
+                <span class="material-symbols-outlined md-34">
+                    search
+                </span>
+                <a href="/pages/listener/search">Search</a>
+            </div>
+        </li>
+        <li>
+            <%  if (currPage === 'preferences'){%>
+            <div class="side-button active">
+            <%}else{%>
+            <div class="side-button">
+            <%}%>
+                <span class="material-symbols-outlined md-34">
+                    settings
+                </span>
+                <a href="/pages/listener/preferences">Preferences</a>
+            </div>
+        </li>
+        <li>
+           <%  if (currPage === 'followers'){%>
+            <div class="side-button active">
+            <%}else{%>
+            <div class="side-button">
+            <%}%> 
+                <span class="material-symbols-outlined md-34">
+                    supervisor_account
+                </span>
+                <a href="/pages/listener/followers">Following</a>
+            </div>
+        </li>
+    </ul>
+</div>
