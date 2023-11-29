@@ -2,7 +2,7 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
 
-const ShowRepository = require('../dal/repositories/showRepository');
+const ShowRepository = require('../database/repositories/showRepository');
 const showRepository = new ShowRepository();
 
 router.route('/')

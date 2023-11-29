@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Experimental Soundscapes",
+      "category": "Experimental",
+      "description": "Pushing the boundaries of sound in experimental music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Funky Goddess",
+      "category": "Funk",
+      "description": "Spreading the funk goddess's groove and rhythm.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Caribbean Breeze",
+      "category": "Caribbean",
+      "description": "Bringing the warmth and breezy vibes of the Caribbean.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Pop/Rock Fusion",
+      "category": "Pop/Rock",
+      "description": "Fusing the best of pop and rock for an epic musical experience.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Ethereal Soundscape",
+      "category": "Ethereal",
+      "description": "Crafting ethereal soundscapes that transport you to another realm.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Reggae Sensation",
+      "category": "Reggae",
+      "description": "Spreading the reggae sensation and positive vibes.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Bluesy Ballads",
+      "category": "Blues",
+      "description": "Delivering soul-stirring blues ballads and melodies.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Latin Dance Fiesta",
+      "category": "Latin",
+      "description": "Fiesta time with Latin dance beats and rhythms.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    }
+]
+  
