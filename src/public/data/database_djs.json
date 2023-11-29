@@ -1,0 +1,237 @@
+[
+    {
+      "name": "Aria",
+      "category": "Electronic",
+      "description": "Bringing you the latest in electronic and dance music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Groove Master",
+      "category": "Funk",
+      "description": "Spinning the grooviest funk tracks around",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Jazz Cat",
+      "category": "Jazz",
+      "description": "Soothing jazz tunes for a relaxing evening.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Rock Star",
+      "category": "Rock",
+      "description": "Rocking out with classic and modern rock hits.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Rhythmic Beats",
+      "category": "Hip-Hop",
+      "description": "Keeping it real with hip-hop and rap beats.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Serenity",
+      "category": "Chillout",
+      "description": "Creating a serene atmosphere with ambient and chillout music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Latin Heat",
+      "category": "Latin",
+      "description": "Spreading the fiery passion of Latin rhythms.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Country Girl",
+      "category": "Country",
+      "description": "Bringing the heart and soul of country music to your ears.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Trance Master",
+      "category": "Trance",
+      "description": "Taking you on a trance journey with mesmerizing beats.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Techno Wizard",
+      "category": "Techno",
+      "description": "Diving into the world of futuristic techno music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Reggae Vibes",
+      "category": "Reggae",
+      "description": "Spreading positive reggae vibes all around.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Classical Maestro",
+      "category": "Classical",
+      "description": "Elevating your senses with classical masterpieces.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Pop Princess",
+      "category": "Pop",
+      "description": "Pop hits and chart-toppers for everyone to enjoy.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Metal Head",
+      "category": "Metal",
+      "description": "Bringing the thunderous sounds of heavy metal to the stage.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Indie Soul",
+      "category": "Indie",
+      "description": "Exploring the soulful and indie side of music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Ambient Dreams",
+      "category": "Ambient",
+      "description": "Creating dreamy soundscapes with ambient melodies.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Blues Master",
+      "category": "Blues",
+      "description": "Feeling the blues with heartfelt blues tunes.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Salsa King",
+      "category": "Salsa",
+      "description": "Spicing up the dance floor with sizzling salsa rhythms.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Acoustic Serenade",
+      "category": "Acoustic",
+      "description": "Serenading you with acoustic and unplugged performances.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Rap Sensation",
+      "category": "Rap",
+      "description": "Delivering the sensation of rap and hip-hop beats.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Electro Fusion",
+      "category": "Electro",
+      "description": "Fusing electronic elements into a unique musical experience.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Folk Storyteller",
+      "category": "Folk",
+      "description": "Sharing folk tales through the power of music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Disco Inferno",
+      "category": "Disco",
+      "description": "Taking you back to the disco era with groovy hits.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Psychedelic Explorer",
+      "category": "Psychedelic",
+      "description": "Embarking on a psychedelic journey of mind-bending soundscapes.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "R&B Harmony",
+      "category": "R&B",
+      "description": "Harmonizing your soul with the smooth sounds of R&B.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Techno Freak",
+      "category": "Techno",
+      "description": "Getting your heart pumping with high-energy techno beats.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Soulful Grooves",
+      "category": "Soul",
+      "description": "Grooving to the soulful sounds of rhythm and blues.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "World Beat Master",
+      "category": "World",
+      "description": "Exploring the diverse beats and rhythms from around the world.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Retro Revival",
+      "category": "Retro",
+      "description": "Bringing back the nostalgia of retro hits and classics.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Ambient Explorer",
+      "category": "Ambient",
+      "description": "Journeying through ambient landscapes of sound.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Ska Rhythms",
+      "category": "Ska",
+      "description": "Skanking to the infectious ska rhythms and vibes.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Experimental Soundscapes",
+      "category": "Experimental",
+      "description": "Pushing the boundaries of sound in experimental music.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Funky Goddess",
+      "category": "Funk",
+      "description": "Spreading the funk goddess's groove and rhythm.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Caribbean Breeze",
+      "category": "Caribbean",
+      "description": "Bringing the warmth and breezy vibes of the Caribbean.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Pop/Rock Fusion",
+      "category": "Pop/Rock",
+      "description": "Fusing the best of pop and rock for an epic musical experience.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Ethereal Soundscape",
+      "category": "Ethereal",
+      "description": "Crafting ethereal soundscapes that transport you to another realm.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Reggae Sensation",
+      "category": "Reggae",
+      "description": "Spreading the reggae sensation and positive vibes.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Bluesy Ballads",
+      "category": "Blues",
+      "description": "Delivering soul-stirring blues ballads and melodies.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    },
+    {
+      "name": "Latin Dance Fiesta",
+      "category": "Latin",
+      "description": "Fiesta time with Latin dance beats and rhythms.",
+      "imgUrl": "../../images/icons/dj-icon.png"
+    }
+]
+  

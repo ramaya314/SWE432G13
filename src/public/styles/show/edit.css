@@ -1,0 +1,56 @@
+.controlsContainer {
+    background-color: var(--background-elevated-base);
+    margin:10px;
+    border-radius: 5px;
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputRow {
+    display:flex;
+    flex-direction: row;
+}
+.inputRow>div {
+    margin:5px;
+}
+.inputLabel {
+    width:70px;
+}
+.inputControl input[type="text"], 
+.inputControl input[type="time"], 
+.inputControl input[type="date"], 
+.inputControl select {
+    background-color: var(--background-base);
+    border-color: var(--essential-subdued);
+    color:var(--text-base);
+    line-height: 25px;
+}
+
+
+.inputControl input[type="date"]::-webkit-calendar-picker-indicator,
+.inputControl input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
+
+.actionButton {
+    font-size:large;
+    width:100px;
+    background-color: var(--background-base);
+    border-color: var(--essential-subdued);
+    color:var(--text-base);
+    padding:10px 20px;
+}
+
+input.error {
+    border-color: var(--essential-negative) !important;
+}
+
+
+.actionButton:hover {
+    color:var(--essential-bright-accent);
+    background-color: var(--background-highlight);
+}

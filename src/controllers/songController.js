@@ -1,7 +1,7 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const router = express.Router();
-const SongRepository = require('../dal/repositories/songRepository');
+const SongRepository = require('../database/repositories/songRepository');
 
 const songRepository = new SongRepository();
 

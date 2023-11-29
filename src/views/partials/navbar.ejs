@@ -1,10 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="/styles/navbar.css" />
 
-<link rel="stylesheet" href="/css/navbar.css" />
 <div class="navbar">
     <img src="/images/logo-placeholder-image.png" class="navBarLogo" />
     <div class="navBarControls">
-        <div class="navBarControls_option">Listen</div>
-        <div class="navBarControls_option active">Produce</div>
-        <div class="navBarControls_option">DJ</div>
+
+        <% navOptions.routes.forEach((v) => { %>
+            <% if (v === navOptions.route){%>
+                <button class="navBarControls_option active"><%= v %></button>
+            <%}else{%>
+                <button class="navBarControls_option" id="nav-<%=v%>"><%= v %></button>
+            <%}%>
+        <%})%>
+
+        <button class="material-symbols-outlined" id="act-btn">
+            account_circle
+        </button>
     </div>
 </div>
+
+<script src="/scripts/nav.js"></script>
