@@ -21,6 +21,10 @@
     margin-bottom: 20px;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .controlListViewHeaderTitle {
 
 }
@@ -87,5 +91,44 @@
 .controlListView_option_actions .iconButton{
     margin:5px;
     display: flex;
+    align-items: center;
+}
+
+
+input[type="text"], 
+input[type="time"], 
+input[type="date"], 
+select {
+    background-color: var(--background-base);
+    border-color: var(--essential-subdued);
+    color:var(--text-base);
+    line-height: 25px;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}
+
+input[disabled] {
+    background-color: var(--background-elevated-highlight) !important;
+    color:var(--text-subdued) !important;
+}
+
+.filterContainer {
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.filterContainer * {
+    padding-right:5px;
+}
+
+.searchBar {
+    display:flex;
+    flex-direction: row;
     align-items: center;
 }
